@@ -11,7 +11,7 @@ variable "create_oidc_provider" {
 
 variable "github_repo_sub" {
   type    = string
-  default = "repo:PRAISE-C24@104138599/robot-shop-observability@1437240205"
+  default = "repo:Benicyben@4138599/robot-shop-observability@37240205"
 }
 
 variable "state_bucket" {

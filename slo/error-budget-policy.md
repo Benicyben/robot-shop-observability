@@ -1,6 +1,6 @@
 # Error Budget Policy: Robot Shop Availability
 
-**Service owner:** Praise | **Version:** 1.0 | **Effective:** 3 November 2026 | **Review:** monthly
+**Service owner:** Benicyben | **Version:** 1.0 | **Effective:** 3 November 2026 | **Review:** monthly
 
 ## 1. Scope
 
