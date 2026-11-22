@@ -5,11 +5,13 @@ on:
   pull_request:
     paths:
       - "infra/eks/**"
+      - "infra/github-oidc/**"
       - ".github/workflows/infra.yml"
   push:
     branches: [main]
     paths:
       - "infra/eks/**"
+      - "infra/github-oidc/**"
       - ".github/workflows/infra.yml"
 
 permissions:
