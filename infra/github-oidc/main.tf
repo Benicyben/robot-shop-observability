@@ -30,7 +30,7 @@ data "aws_iam_policy_document" "plan_trust" {
 }
 
 resource "aws_iam_role" "plan" {
-  name               = "gha-robot-shop-plan"
+  name               = "gha-robot-shop-plan${var.name_suffix}"
   assume_role_policy = data.aws_iam_policy_document.plan_trust.json
 }
 
@@ -56,7 +56,7 @@ data "aws_iam_policy_document" "apply_trust" {
 }
 
 resource "aws_iam_role" "apply" {
-  name               = "gha-robot-shop-apply"
+  name               = "gha-robot-shop-apply${var.name_suffix}"
   assume_role_policy = data.aws_iam_policy_document.apply_trust.json
 }
 
@@ -77,11 +77,11 @@ resource "aws_iam_role_policy_attachment" "plan_readonly" {
 data "aws_iam_policy_document" "plan_state" {
   statement {
     actions   = ["s3:ListBucket"]
-    resources = ["arn:aws:s3:::${var.state_bucket}"]
+    resources = ["arn:aws:s3:::${var.state_bucket}${var.name_suffix}"]
   }
   statement {
     actions   = ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
-    resources = ["arn:aws:s3:::${var.state_bucket}/*"]
+    resources = ["arn:aws:s3:::${var.state_bucket}${var.name_suffix}/*"]
   }
 }
 
@@ -135,7 +135,7 @@ resource "aws_iam_role_policy" "deploy" {
   policy = data.aws_iam_policy_document.deploy_permissions.json
 }
 resource "aws_iam_role" "deploy" {
-  name               = "gha-robot-shop-deploy"
+  name               = "gha-robot-shop-deploy${var.name_suffix}"
   assume_role_policy = data.aws_iam_policy_document.deploy_trust.json
 }
 

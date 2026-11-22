@@ -6,7 +6,7 @@ set -euo pipefail
 REGION="${AWS_REGION:-us-east-1}"
 PROJECT="${PROJECT:-robot-shop-observability}"
 ACCOUNT_ID="$(aws sts get-caller-identity --query Account --output text)"
-BUCKET="${STATE_BUCKET:-tfstate-${ACCOUNT_ID}-${REGION}}"
+BUCKET="${STATE_BUCKET:-tfstate-${ACCOUNT_ID}-${REGION}}-second"
 
 echo "Account: ${ACCOUNT_ID}"
 echo "Region:  ${REGION}"

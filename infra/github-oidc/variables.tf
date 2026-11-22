@@ -11,7 +11,6 @@ variable "create_oidc_provider" {
 
 variable "github_repo_sub" {
   type    = string
-  default = "repo:Benicyben@67280427/robot-shop-observability@1466145432"
 }
 
 variable "state_bucket" {
@@ -22,4 +21,10 @@ variable "state_bucket" {
 variable "cluster_name" {
   type    = string
   default = "robot-shop" # must match cluster_name in infra/eks
+}
+
+variable "name_suffix" {
+  type        = string
+  description = "Appended to IAM role names so projects sharing an AWS account don't collide"
+  default     = ""
 }
